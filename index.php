@@ -1,21 +1,21 @@
-
 <?php
-
+# Delete file
 $fileo=$_GET["fileo"];
 if($fileo != ""){
    unlink ($fileo);
-   echo "<script type='text/javascript'>document.location.href='./index.php';</script>";
+   echo "<script type='text/javascript'>document.location.href='./index.php';</script>";	// redirect
 }
 
 ?>
 
 
 <?php
+	# upload file
     if(!empty($_FILES)){
         if($_FILES["file"]["error"] == 0){
             move_uploaded_file($_FILES["file"]["tmp_name"],$_FILES["file"]["name"]);
             echo "File < ".$_FILES['file']['name']." > upload success!"; 
-			echo "<script type='text/javascript'>document.location.href='./index.php';</script>";
+			echo "<script type='text/javascript'>document.location.href='./index.php';</script>";	// redirect
         }
     }
 ?>
